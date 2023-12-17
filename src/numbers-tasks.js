@@ -105,8 +105,11 @@ function getLinearEquationRoot(a, b) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const scalar = x1 * x2 + y1 * y2;
+  const a = Math.sqrt(x1 ** 2 + y1 ** 2);
+  const b = Math.sqrt(x2 ** 2 + y2 ** 2);
+  return Math.acos(scalar / (a * b));
 }
 
 /**
@@ -319,8 +322,13 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  let a = num ** 2;
+  while (a % 2 === 0) {
+    if (a === 2) return true;
+    a /= 2;
+  }
+  return false;
 }
 
 /**
@@ -611,8 +619,8 @@ function getRandomInteger(min, max) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
-  throw new Error('Not implemented');
+function getHypotenuse(a, b) {
+  return Math.hypot(a, b);
 }
 
 /**
